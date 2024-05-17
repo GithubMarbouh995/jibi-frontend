@@ -1,15 +1,3 @@
-/*
- * License: The MIT License (MIT)
- * Author:E-bank IT team
- * Author email: @ebanka-it.com
- * Date: Thu Aug 22 2019
- * Description: 
- * Service to support utility payment
- * creation, editing and deleting.
- * Also has a defined observable to
- * emit an change in fetched utility payments
- * to all subscribed compontents. 
- */
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
@@ -29,24 +17,22 @@ export class PostsService {
   getPosts(postsPerPage: number, currentPage: number, userId: string) {
     const queryParams = `?pagesize=${[postsPerPage]}&page=${currentPage}&creator=${userId}`;
     this.http
-      .get<{ message: string, posts: any, maxPosts: number }>( 
+      .get<{ message: string, posts: any, maxPosts: number }>(
         'http://localhost:3000/api/posts' + queryParams
       )
       .pipe
-        (map((postData) => {
+      (map((postData) => {
           return {
-            posts: postData.posts.map(post => {
-              return {
-                id: post._id,
-                title: post.title,
-                content: post.content,
-                imagePath: post.imagePath,
-                creator: post.creator
-              };
-          }),
-          maxPosts: postData.maxPosts
-        };
-      })
+            posts: postData.posts.map((post: Post) => ({
+              id: post.id,
+              title: post.title,
+              content: post.content,
+              imagePath: post.imagePath,
+
+            })),
+            maxPosts: postData.maxPosts
+          };
+        })
       )
       .subscribe(transformedPostsData => {
         this.posts = transformedPostsData.posts;
@@ -64,8 +50,8 @@ export class PostsService {
      return this.http.get<{_id: string, title: string, content: string, imagePath: string}>('http://localhost:3000/api/posts/' + id);
   }
   addPost(title: string, content: string, image: File) {
-    const postData = new FormData(); 
-    postData.append('title', title); 
+    const postData = new FormData();
+    postData.append('title', title);
     postData.append('content', content);
     postData.append('image', image, title);
    this.http.post<{ message: string, post: Post}>('http://localhost:3000/api/posts/', postData)

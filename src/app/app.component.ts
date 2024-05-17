@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from './auth/auth.service';
+// import { AuthService } from './auth/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +7,12 @@ import { AuthService } from './auth/auth.service';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent implements OnInit { // ovako omogucujemo @ng da zna kojoj komponenti (klasi) pristupamo
-  constructor(private authService: AuthService) { }
+export class AppComponent implements OnInit {
+  // De cette façon, nous permettons à @ng de savoir à quel composant (classe) nous accédons
+  title = 'frontend';
+  constructor(
+    // private authService: AuthService
+  ) { }
   ngOnInit() {
     /**
      * From this component we call function
@@ -22,6 +26,6 @@ export class AppComponent implements OnInit { // ovako omogucujemo @ng da zna ko
      * be first loaded when we start web app.
      *
      * */
-    this.authService.autoAuthUser();
+    // this.authService.autoAuthUser();
   }
 }

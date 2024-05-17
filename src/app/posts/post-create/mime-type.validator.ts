@@ -1,12 +1,11 @@
-
 import { AbstractControl } from '@angular/forms';
 import { Observable, Observer, of } from 'rxjs';
 
 export const mimeType = (
   control: AbstractControl
 ): Promise<{ [key: string]: any }> | Observable<{ [key: string]: any }> => {
-  if (typeof(control.value) === 'string') { // ako je slika blob vrati null
-    return of(null);
+  if (typeof(control.value) === 'string') {
+    return of({ isValid: true });
   }
   const file = control.value as File;
   const fileReader = new FileReader();
@@ -16,7 +15,6 @@ export const mimeType = (
         const arr = new Uint8Array(fileReader.result as ArrayBuffer).subarray(0, 4);
         let header = '';
         let isValid = false;
-        // tslint:disable-next-line: prefer-for-of
         for (let i = 0; i < arr.length; i++) {
           header += arr[i].toString(16);
         }
@@ -36,9 +34,9 @@ export const mimeType = (
             break;
         }
         if (isValid) {
-          observer.next(null);
+          observer.next({ isValid: true });
         } else {
-          observer.next({ invalidMimeType: true });
+          observer.next({ isValid: false, invalidMimeType: true });
         }
         observer.complete();
       });

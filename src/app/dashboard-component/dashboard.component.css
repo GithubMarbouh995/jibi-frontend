@@ -1,227 +1,237 @@
-.info {
+/*.form-container {*/
+/*  width: 80%;*/
+/*  margin: auto;*/
+/*  padding: 20px;*/
+/*  background-color: #fff;*/
+/*  border-radius: 8px;*/
+/*  box-shadow: 0 2px 15px rgba(0,0,0,0.1);*/
+/*}*/
+
+/*h2 {*/
+/*  color: #333;*/
+/*  border-bottom: 2px solid #5cb85c;*/
+/*  padding-bottom: 10px;*/
+/*}*/
+
+/*.form-row {*/
+/*  display: flex;*/
+/*  justify-content: space-between;*/
+/*  margin-bottom: 20px;*/
+/*}*/
+
+/*.form-group {*/
+/*  flex-basis: 48%;*/
+/*}*/
+
+/*.form-group label {*/
+/*  font-weight: bold;*/
+/*  margin-bottom: 5px;*/
+/*  display: block;*/
+/*}*/
+
+/*input[type="text"], input[type="email"], input[type="tel"], input[type="date"] {*/
+/*  width: 100%;*/
+/*  padding: 10px;*/
+/*  border: 1px solid #ccc;*/
+/*  border-radius: 4px;*/
+/*}*/
+
+/*.file-upload {*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*}*/
+
+/*.file-upload button {*/
+/*  background-color: #5cb85c;*/
+/*  color: white;*/
+/*  padding: 8px 12px;*/
+/*  border: none;*/
+/*  border-radius: 4px;*/
+/*  cursor: pointer;*/
+/*  margin-right: 10px;*/
+/*}*/
+
+/*#file-chosen {*/
+/*  color: #666;*/
+/*}*/
+
+/*.form-actions {*/
+/*  display: flex;*/
+/*  justify-content: center; !* Center align the buttons *!*/
+/*  gap: 20px;*/
+/*  margin-top: 20px;*/
+/*}*/
+
+/*.form-actions button {*/
+/*  padding: 10px 20px;*/
+/*  background-color: #5cb85c;*/
+/*  color: white;*/
+/*  border: none;*/
+/*  border-radius: 4px;*/
+/*  cursor: pointer;*/
+/*}*/
+
+/*.form-actions button[type="button"] {*/
+/*  background-color: #f0ad4e;*/
+/*}*/
+
+/*!* Creative styling *!*/
+/*input:focus, button:focus {*/
+/*  outline: none;*/
+/*  border-color: #80bdff;*/
+/*  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);*/
+/*}*/
+
+/*input::placeholder {*/
+/*  font-style: italic;*/
+/*}*/
+/*.form-row {*/
+/*  display: flex;*/
+/*  justify-content: start; !* Aligns children elements to the start of the row *!*/
+/*  align-items: center; !* Vertically aligns children in the middle *!*/
+/*}*/
+
+/*.form-group {*/
+/*  margin-right: 30px; !* Adds space between the form groups *!*/
+/*}*/
+
+/*.m-4 {*/
+/*  margin: 16px; !* Adjusts margin all around the elements *!*/
+/*}*/
+
+/*.file-upload button {*/
+/*  background-color: #007bff;*/
+/*  color: white;*/
+/*  border: none;*/
+/*  padding: 8px 16px;*/
+/*  border-radius: 4px;*/
+/*  cursor: pointer;*/
+/*  margin-right: 10px;*/
+/*}*/
+
+/*.file-upload span {*/
+/*  font-size: 0.9rem; !* Adjusts the font size for the filename display *!*/
+/*}*/
+.form-container {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+h2 {
+  color: #333;
+  border-bottom: 2px solid #5cb85c;
+  padding-bottom: 10px;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* Ensures that form rows wrap on smaller screens */
+}
+
+.form-group {
+  flex-basis: 48%;
+  margin-bottom: 20px; /* Ensures consistent spacing between form groups */
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
   display: block;
-  position: relative;
-  margin-left: 10px;
-  margin-top: 15px;
-  margin-bottom: 2px;
-  left: 233px;
-  bottom: 577px;
-  width: 90%;
-  height: 879px;
-  background-color: #fffffff5;
-  }
+}
 
-  .avatar {
-    position: sticky;
-    right: 1022px;
-  }
+/* Uniform style for all input types */
+input[type="text"], input[type="email"], input[type="tel"], input[type="date"], input[type="file"], input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
 
-  .avatar-title {
-    position: relative;
-    left: 92px;
-    top: 6px;
-    margin-bottom: 3px;
-    font-size: 18px;
-    font-weight: lighter;
-    color: dimgray;
-  }
+.file-upload {
+  display: flex;
+  align-items: center;
+}
 
-  .contact-btn {
-    border-radius:18px;
-    top: 6px;
-    right: 6px;
-  }
+.file-upload button {
+  background-color: #5cb85c;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
 
-  .flex {
-    display: inline-flex;
-    flex-direction: row;
-    position: relative;
-    margin-left: 14px;
-    margin-right: -8px;
-    margin-top: 0px;
-    margin-bottom: -71px;
-    left: 464px;
-    bottom: 61px;
-  }
+#file-chosen {
+  color: #666;
+}
 
-  .divider {
-    margin-right: 15px;
-    margin-left: 15px;
-    border-color: #daa5206e;
-    border-width: 2px !important;
-  }
+.form-actions {
+  display: flex;
+  justify-content: center; /* Center align the buttons */
+  gap: 20px;
+  margin-top: 20px;
+}
 
-  .block-divider {
-    left: 30px !important;
-    width: 961px !important;
-    border-top-color: #daa5206e;
-  }
+.form-actions button {
+  padding: 10px 20px;
+  background-color: #5cb85c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
-  .grid-card {
-    max-width: 461px;
-    max-height: 249px;
-  }
+.form-actions button[type="button"] {
+  background-color: #f0ad4e;
+}
 
-  .grid-card-header-image {
-    background-size: cover;
-  }
+/* Focus and placeholder styles */
+input:focus, button:focus {
+  outline: none;
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
 
-  .icon {
-    font-size: 48px;
-  }
+input::placeholder {
+  font-style: italic;
+}
+.input-group.grid {
+  display: flex;
+  flex-direction: column; /* Organise les éléments en colonne */
+  align-items: start; /* Alignement au début pour les aligner correctement */
+}
 
-  .current-balance {
-    font-size: 48px;
-    font-weight: 100;
-    color: goldenrod;
-    text-align: center;
-    margin: 0;
-  }
+.m-4 {
+  margin: 16px; /* Espacement autour du bouton */
+  padding: 8px 16px; /* Ajustements de padding pour le bouton */
+  background-color: #5cb85c; /* Couleur de fond pour le bouton */
+  color: white; /* Couleur du texte pour le bouton */
+  border: none;
+  border-radius: 4px; /* Arrondissement des coins du bouton */
+  cursor: pointer; /* Change le curseur lors du survol du bouton */
+}
 
-  .current-balance-box {
-    bottom: 123px;
-    width: 352px;
-  }
+.form-group {
+  margin-bottom: 20px; /* Espacement sous chaque groupe de formulaire */
+}
 
-  .current-balance-btn {
-    position: relative;
-    margin-left: 0;
-    margin-right: 0;
-    left: 29px;
-  }
+/* Styles supplémentaires pour assurer l'uniformité et l'accessibilité */
+button:focus, input:focus {
+  outline: none;
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
 
-  mat-card {
-    margin: 15px;
-    display: inline-block;
-    left: 3px;
-    bottom: 55px;
-    padding: 15px;
-  }
-
-  .list {
-    width: 503px;
-    height: 239px;
-    left: 0px;
-    overflow: hidden visible;
-    cursor: pointer;
-  }
-
-  .list-exchange-calc {
-    width: 509px;
-    height: 300px;
-    left: 0px;
-    overflow: hidden visible;
-  }
-
-  .no-overflow {
-    overflow:  hidden hidden;
-    cursor: default;
-  }
-
-  table {
-   width: 100%;
-  }
-
-  .transaction-box {
-    bottom: 37px;
-    width: 506px;
-  }
-
-  .exchange-box {
-    bottom: 37px;
-    width: 506px;
-  }
-
-  .transfer-box {
-    bottom: 138px;
-    width: 355px
-  }
-
-  .transfer-buttons {
-    bottom: 21px;
-    position: relative;
-  }
-
-  tr.transaction-detail-row {
-    height: 0;
-  }
-
-  tr.transaction-element-row:not(.transaction-expanded-row):hover {
-    background: rgba(156, 146, 0, 0.158);
-  }
-
-  tr.transaction-element-row:not(.transaction-expanded-row):active {
-    background: #efefef;
-  }
-
-  .transaction-element-row td {
-    border-bottom-width: 0;
-  }
-
-  .transaction-element-detail {
-    overflow: hidden;
-    display: flex;
-  }
-
-  .transaction-element-description {
-    padding: 16px;
-    padding-top: 0px;
-    padding-bottom: 18px;
-    opacity: 0.8;
-    width: 374px;
-  }
-
-  .elipsis {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: block;
-    width: 116px;
-  }
-
-  .sticky-header {
-    z-index : 2 !important;
-  }
-
-  .header-row {
-    height: 41px;
-  }
-
-  .no-transactions {
-    width: 225px;
-    margin: 0px 0px 9px 0px;
-    top: 27px;
-    left: 135px;
-    position: relative;
-    overflow-y: hidden;
-  }
-
-  .no-transactions-message {
-    text-align: center;
-  }
-
-  .currency {
-    font-size: 23px;
-  }
-
-  .spinner {
-    left: 144px;
-    top: 63px
-  }
-
-  .mat-progress-spinner circle, .mat-spinner circle {
-    stroke-width: 3%;
-    stroke: goldenrod !important;
-    }
-
-  .gear-transactions {
-    left: 178px
-  }
-
-  .gear-currency-exchange {
-    left: 274px
-  }
-
-  .gear-funds-transfer {
-    left: 74px;
-  }
+input[type="file"] {
+  width: 100%; /* Assure que le champ file s'adapte à la largeur disponible */
+}
+.madiv{
+  margin: 20px;
+}

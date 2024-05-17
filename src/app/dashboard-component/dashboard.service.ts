@@ -58,26 +58,25 @@ export class DashService {
     Function for converting data from ISO8601 shape (from MySQL db)
     into dd-mm-yy format for frontend (transactions list table).
      */
-    dateFromISO8601(isostr) {
-        var parts = isostr.match(/\d+/g);
-        let date = new Date(parts[0], parts[1] - 1, parts[2], parts[3], parts[4], parts[5]);
+  dateFromISO8601(isostr: any) {
+    var parts = isostr.match(/\d+/g);
+    let date = new Date(parts[0], parts[1] - 1, parts[2], parts[3], parts[4], parts[5]);
 
-        let partialYearStr = date.getFullYear().toString().substring(2, 4);
+    let partialYearStr = date.getFullYear().toString().substring(2, 4);
 
-        let day = date.getDate() + 1;
-        let dayStr = day.toString();
+    let day = date.getDate() + 1;
+    let dayStr = day.toString();
 
-        let month = date.getMonth() + 1;
-        let monthStr = month.toString();
+    let month = date.getMonth() + 1;
+    let monthStr = month.toString();
 
-        if (day < 10) {
-            dayStr = '0' + day;
-        }
-
-        if (month < 10) {
-            monthStr = '0' + month;
-        }
-        return (dayStr + "-" + monthStr + "-" + partialYearStr)
+    if (day < 10) {
+      dayStr = '0' + day;
     }
 
+    if (month < 10) {
+      monthStr = '0' + month;
+    }
+    return (dayStr + "-" + monthStr + "-" + partialYearStr)
+  }
 }

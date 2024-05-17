@@ -11,6 +11,7 @@ import {SignupComponent} from "./auth/signup/signup.component";
 import {HelpComponent} from "./help/help.component";
 import {DashboardComponent} from "./dashboard-component/dashboard.component";
 import {TestComponent} from "./test-component/test.component";
+
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {HttpClientModule} from "@angular/common/http";
@@ -32,7 +33,12 @@ import {MatTableModule} from "@angular/material/table";
 import {MatOptionModule} from "@angular/material/core";
 import {MatSelectModule} from "@angular/material/select";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
-import { MatVideoModule } from 'mat-video';
+import { CompteClientComponent } from './compte-client/compte-client.component';
+import { BillPaymentComponent } from './bill-payment/bill-payment.component';
+import {MatTabsModule} from "@angular/material/tabs";
+import { HomeComponent } from './home/home.component';
+import { CreateAgencyComponent } from './create-agency/create-agency.component';
+// import { MatVideoModule } from 'mat-video';
 
 @NgModule({
   declarations: [
@@ -45,6 +51,10 @@ import { MatVideoModule } from 'mat-video';
     HelpComponent,
     DashboardComponent,
     TestComponent,
+    CompteClientComponent,
+    BillPaymentComponent,
+    HomeComponent,
+    CreateAgencyComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,8 +81,10 @@ import { MatVideoModule } from 'mat-video';
     MatTableModule,
     MatOptionModule,
     MatSelectModule,
-    MatVideoModule,
+    // MatVideoModule,
     MatProgressBarModule,
+    MatTabsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

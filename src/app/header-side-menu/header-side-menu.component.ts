@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { AuthService } from '../auth/auth.service';
+// import { AuthService } from '../auth/auth.service';
 import { Subscription } from 'rxjs';
 import { DashService } from '../dashboard-component/dashboard.service';
 
@@ -11,8 +11,8 @@ import { DashService } from '../dashboard-component/dashboard.service';
 export class HeaderSideMenuComponent implements OnInit, OnDestroy {
   isLoading = false;
   userIsAuthenticated = false;
-  private authStatusSub: Subscription;
-  private userSub: Subscription; // subscriber to cath asynchronous response from dashboard.service.ts
+  // private authStatusSub: Subscription;
+  // private userSub: Subscription; // subscriber to cath asynchronous response from dashboard.service.ts
   user = {
     name: "",
     surname: "",
@@ -24,32 +24,35 @@ export class HeaderSideMenuComponent implements OnInit, OnDestroy {
    * 2. dashService - If an user is authenticated, we load its full name from dashService
    *
    */
-  constructor(private authService: AuthService, public dashService: DashService) { }
+  constructor(
+    // private authService: AuthService,
+    public dashService: DashService
+  ) { }
 
   ngOnInit() {
-    this.isLoading = true;
-    const userId = this.authService.getUserId();
-    this.dashService.getUserData(userId);
-    this.userSub = this.dashService.getUserDataListener()
-      .subscribe((userData: { name: string, surname: string}) => {
-        this.isLoading = false;
-        this.user = userData;
-      });
-    this.userIsAuthenticated = this.authService.getIsAuth();
-    this.authStatusSub = this.authService
-      .getAuthStatusListener()
-      .subscribe(isAuthenticated => {
-        this.userIsAuthenticated = isAuthenticated;
-      });
+    // this.isLoading = true;
+    // const userId = this.authService.getUserId();
+    // this.dashService.getUserData(userId);
+    // // this.userSub = this.dashService.getUserDataListener()
+    //   .subscribe((userData: { name: string, surname: string}) => {
+    //     this.isLoading = false;
+    //     this.user = userData;
+    //   });
+    // this.userIsAuthenticated = this.authService.getIsAuth();
+    // this.authStatusSub = this.authService
+    //   .getAuthStatusListener()
+    //   .subscribe(isAuthenticated => {
+    //     this.userIsAuthenticated = isAuthenticated;
+    //   });
   }
   ngOnDestroy() {
-    this.authStatusSub.unsubscribe();
-    this.userSub.unsubscribe();
+    // this.authStatusSub.unsubscribe();
+    // this.userSub.unsubscribe();
   }
 
 
   onLogout() {
-    this.authService.logout();
+    // this.authService.logout();
   }
 
 }

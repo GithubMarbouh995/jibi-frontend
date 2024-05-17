@@ -16,13 +16,13 @@ export class PostCreateComponent implements OnInit {
   enteredTitle = '';
   enteredContent = '';
   private mode = 'create';
-  private postId: string;
-  form: FormGroup;
+  private postId: string = '';
+  form: FormGroup = new FormGroup({});
   isLoading = false;
-  post: Post;
-  imagePreview: string;
+  post: Post = {id: '', title: '', content: '', imagePath: ''};
+  imagePreview: string = '';
   constructor(public postsService: PostsService, public route: ActivatedRoute) {}
-    error = {title: 'Enter title', content: 'Enter details'};
+  error = {title: 'Enter title', content: 'Enter details'};
   ngOnInit() {
 
     this.form  = new FormGroup({
@@ -38,7 +38,7 @@ export class PostCreateComponent implements OnInit {
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
       if (paramMap.has('postId')) {
         this.mode = 'edit';
-        this.postId = paramMap.get('postId');
+        this.postId = paramMap.get('postId') || '';
         this.isLoading = true;
         this.postsService.getPost(this.postId).subscribe(postData => {
           this.isLoading = false;
@@ -51,20 +51,21 @@ export class PostCreateComponent implements OnInit {
         });
       } else {
         this.mode = 'create';
-        this.postId = null;
+        this.postId = '';
       }
     });
   }
   onImagePicked(event: Event) {
-    const file = (event.target as HTMLInputElement).files[0];
-    this.form.patchValue({image: file});
-    this.form.get('image').updateValueAndValidity();
-    const reader = new FileReader();
-    reader.onload = () => {
-      this.imagePreview = reader.result as string;
-    };
-    reader.readAsDataURL(file);
-
+    const target = event.target as HTMLInputElement;
+    const file = target.files && target.files.length > 0 ? target.files[0] : null;    if (file) {
+      this.form.patchValue({image: file});
+      this.form.get('image')?.updateValueAndValidity();
+      const reader = new FileReader();
+      reader.onload = () => {
+        this.imagePreview = reader.result as string;
+      };
+      reader.readAsDataURL(file);
+    }
   }
   onSavePost() {
     if (this.form.invalid) {
