@@ -1,0 +1,35 @@
+<br>
+
+<mat-card class="container">
+    <h3 style="color: #a0a0a0;">Sélectionner pour payer</h3>
+    <hr>
+    <!-- <mat-card-content> -->
+      <form class="container flex">
+        <img src="assets\pictures\amendis.png" alt="Description de l'image" class="image-left">
+        <div class="client-info">
+          <div class="full-width">
+            <strong>Créance</strong> SIDACTION
+
+          </div>
+          <div class="full-width">
+            <strong>Donateur</strong> {{fullname}}
+          </div>
+          </div >
+       </form>
+          <h3 style="color: #a0a0a0;">Sélectionner pour payer</h3>
+          <hr>
+          <form class="container flex">
+          <div class="client-info">
+          <div class="full-width">
+            <div class="payment-selection">
+              <div class="payment-label">Don Sidaction</div>
+              <div class="payment-amount">{{montant}} DHS</div>
+            </div>
+            <div style="text-align: center;">
+                <button mat-raised-button color="danger" class="margin-right" > ✓ Valider</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    <!-- </mat-card-content> -->
+</mat-card>
