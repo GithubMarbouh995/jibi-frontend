@@ -203,7 +203,7 @@
 }
 
 .team-member {
-  flex: 0 1 calc(33.333% - 40px); /* Pour trois membres par ligne avec un espace */
+  flex: 0 1 calc(33.333% - 40px);
   margin: 20px;
   box-sizing: border-box;
 }
