@@ -1,0 +1,139 @@
+<!--<div class="wrapper">-->
+<!--  <app-client-sidebar></app-client-sidebar>-->
+<!--  <div class="main">-->
+<!--    <div class="content">-->
+<!--      <mat-card class="container">-->
+<!--        <mat-card-title style="text-align: center;">Effectuer un paiement</mat-card-title>-->
+<!--        <mat-card-content>-->
+<!--          <form class="container flex">-->
+<!--            <img src="assets/pictures/amendis.png" alt="Description de l'image" class="image-left">-->
+<!--            <div class="client-info">-->
+<!--              <mat-form-field appearance="fill" class="full-width ">-->
+<!--                <mat-label>Nom et Prénom du donateur</mat-label>-->
+<!--                <input matInput id="fullname" [(ngModel)]="fullname" [ngModelOptions]="{standalone: true}">-->
+<!--              </mat-form-field>-->
+<!--              <mat-form-field appearance="fill" class="full-width">-->
+<!--                <mat-label>Montant du don (DHS)</mat-label>-->
+<!--                <input matInput id="montant" [(ngModel)]="montant" [ngModelOptions]="{standalone: true}">-->
+<!--              </mat-form-field>-->
+<!--            </div>-->
+<!--            <div style="text-align: center;">-->
+<!--              <button mat-raised-button color="danger" class="margin-right" (click)="Valider()" routerLink="/paiement/recapitulatif">✓ Valider</button>-->
+<!--              <button mat-raised-button color="warn">✗ Annuler</button>-->
+<!--            </div>-->
+<!--          </form>-->
+<!--        </mat-card-content>-->
+<!--      </mat-card>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--//autre modification-->
+<div class="wrapper">
+  <aside id="sidebar" [class.expand]="isExpanded">
+    <div class="d-flex">
+      <button class="toggle-btn" type="button" (click)="toggleSidebar()">
+        <i class="lni lni-grid-alt"></i>
+      </button>
+      <div class="sidebar-logo">
+        <a href="#">Main dashboard</a>
+      </div>
+    </div>
+    <ul class="sidebar-nav">
+      <li class="sidebar-item">
+        <a href="#" class="sidebar-link">
+          <i class="lni lni-user"></i>
+          <span>Profile</span>
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a href="#" class="sidebar-link">
+          <i class="bi bi-arrow-counterclockwise"></i>
+          <span>Historique</span>
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+           [attr.data-bs-target]="'#auth'" aria-expanded="false" aria-controls="auth">
+          <i class="bi bi-credit-card-2-front"></i>
+          <span>Opereations</span>
+        </a>
+        <ul id="auth" class="sidebar-dropdown list-unstyled collapse">
+          <li class="sidebar-item">
+            <a href="#" class="sidebar-link" routerLink="/bill">Effectuer un paiement</a>
+          </li>
+          <li class="sidebar-item">
+            <a href="#" class="sidebar-link">Autre shose</a>
+          </li>
+        </ul>
+      </li>
+      <li class="sidebar-item">
+        <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+           [attr.data-bs-target]="'#multi'" aria-expanded="false" aria-controls="multi">
+          <i class="lni lni-layout"></i>
+          <span>Multi Level</span>
+        </a>
+        <ul id="multi" class="sidebar-dropdown list-unstyled collapse">
+          <li class="sidebar-item">
+            <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse"
+               [attr.data-bs-target]="'#multi-two'" aria-expanded="false" aria-controls="multi-two">
+              Two Links
+            </a>
+            <ul id="multi-two" class="sidebar-dropdown list-unstyled collapse">
+              <li class="sidebar-item">
+                <a href="#" class="sidebar-link">Link 1</a>
+              </li>
+              <li class="sidebar-item">
+                <a href="#" class="sidebar-link">Link 2</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class="sidebar-item">
+        <a href="#" class="sidebar-link">
+          <i class="lni lni-popup"></i>
+          <span>Notification</span>
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a href="#" class="sidebar-link">
+          <i class="lni lni-cog"></i>
+          <span>Setting</span>
+        </a>
+      </li>
+    </ul>
+    <div class="sidebar-footer">
+      <a href="#" class="sidebar-link">
+        <i class="lni lni-exit"></i>
+        <span>Logout</span>
+      </a>
+    </div>
+  </aside>
+  <div class="main p-3">
+    <div class="text-center">
+      <mat-card class="container">
+        <mat-card-title style="text-align: center;">Effectuer un paiement</mat-card-title>
+        <mat-card-content>
+          <form class="container flex">
+            <img src="assets/pictures/amendis.png" alt="Description de l'image" class="image-left">
+            <div class="client-info">
+              <mat-form-field appearance="fill" class="full-width ">
+                <mat-label>Nom et Prénom du donateur</mat-label>
+                <input matInput id="fullname" [(ngModel)]="fullname" [ngModelOptions]="{standalone: true}">
+              </mat-form-field>
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Montant du don (DHS)</mat-label>
+                <input matInput id="montant" [(ngModel)]="montant" [ngModelOptions]="{standalone: true}">
+              </mat-form-field>
+            </div>
+            <div style="text-align: center;">
+              <button mat-raised-button color="danger" class="margin-right" (click)="Valider()" routerLink="/paiement/recapitulatif">✓ Valider</button>
+              <button mat-raised-button color="warn">✗ Annuler</button>
+            </div>
+          </form>
+        </mat-card-content>
+      </mat-card>
+
+    </div>
+  </div>
+</div>
