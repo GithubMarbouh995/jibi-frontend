@@ -1,0 +1,46 @@
+.container {
+  width: 80%;
+  margin: 20px auto;
+}
+
+mat-card-title {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.client-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.full-width {
+  flex: 48%; /* Adjust the width to closely match the design */
+  margin-bottom: 20px; /* Add space below each field */
+}
+
+/* Add margin to the right for the first item in each row to space out pairs */
+.client-info > mat-form-field:nth-child(odd) {
+  margin-right: 4%;
+}
+
+button {
+  display: block; /* Make the button a block element */
+  margin: 20px auto 0; /* Center the button horizontally and add margin on top */
+  padding: 10px 20px; /* Adjust padding for better appearance */
+}
+
+/* Responsive adjustments if needed */
+@media (max-width: 768px) {
+  .full-width {
+    flex: 100%; /* Make fields take full width on smaller screens */
+  }
+  .client-info > mat-form-field:nth-child(odd) {
+    margin-right: 0; /* Remove margin right on smaller screens */
+  }
+}

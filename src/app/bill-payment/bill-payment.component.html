@@ -1,0 +1,30 @@
+<mat-card class="container">
+  <mat-card-title>Paiement de facture</mat-card-title>
+  <mat-tab-group>
+    <mat-tab label="Liste des créanciers">
+      <div class="filter">
+        <mat-form-field appearance="fill">
+          <mat-label>Toutes les catégories</mat-label>
+          <mat-select>
+            <mat-option value="all">Toutes les catégories</mat-option>
+            <!-- Ajoutez d'autres options ici -->
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="creditors-list">
+        <div *ngFor="let creditor of creditors" class="creditor-card">
+          <mat-card>
+            <img mat-card-image [src]="creditor.logo" alt="{{creditor.name}}">
+            <mat-card-content>
+              <h3>{{creditor.name}}</h3>
+              <p>{{creditor.description}}</p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Historique">
+      <!-- Contenu de l'historique -->
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>
