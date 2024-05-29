@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Creancier } from '../modals/creancier';
+import { CmiService } from '../service/cmi.service';
 
 @Component({
   selector: 'app-paiement-home',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./paiement-home.component.css']
 })
 export class PaiementHomeComponent implements OnInit {
-
-  constructor() { }
+  creanciers: Creancier[]=[]
+  constructor(private cmiService: CmiService) { }
 
   ngOnInit(): void {
+    this.getAllCreancier();
   }
 
+  getAllCreancier(){
+    return this.cmiService.getAllCreanciers().subscribe(
+      data =>{
+        this.creanciers=data;
+        console.log(data);
+      }
+    )
+  }
 }

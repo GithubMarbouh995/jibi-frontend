@@ -3,4 +3,5 @@ export interface PaymentAccountCreationRequest {
     lastName: string;
     phoneNumber: string;
     email: string;
+    typeHissab: string;
   }

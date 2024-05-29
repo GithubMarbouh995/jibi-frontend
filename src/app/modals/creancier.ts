@@ -5,4 +5,5 @@ export interface Creancier {
   creditorName: string;
   category: string;
   listCreances: Creance[];
+  image: string;
 }

@@ -46,6 +46,9 @@ import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { AgencySidebarComponent } from './agency-sidebar/agency-sidebar.component';
 import { ClientSidebarComponent } from './client-sidebar/client-sidebar.component';
 import { ClientHomeComponent } from './client-home/client-home.component';
+import { CreateClientComponent } from './create-client/create-client.component';
+import { CreateAgentComponent } from './create-agent/create-agent.component';
+import { ListImpayeComponent } from './list-impaye/list-impaye.component';
 // import { MatVideoModule } from 'mat-video';
 
 @NgModule({
@@ -71,6 +74,9 @@ import { ClientHomeComponent } from './client-home/client-home.component';
     AgencySidebarComponent,
     ClientSidebarComponent,
     ClientHomeComponent,
+    CreateClientComponent,
+    CreateAgentComponent,
+    ListImpayeComponent,
   ],
   imports: [
     BrowserModule,

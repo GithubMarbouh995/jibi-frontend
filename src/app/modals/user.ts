@@ -6,5 +6,6 @@ export interface User {
     telephone: string;
     username: string;
     password: string;
-    createdDate: string; // Utilisez Date si vous préférez travailler avec des objets Date en TypeScript
+    createdDate: string; 
+    num_piece_identite: string;// Utilisez Date si vous préférez travailler avec des objets Date en TypeScript
   }

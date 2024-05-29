@@ -17,37 +17,13 @@
 </mat-card-content>
 
 <mat-card class="container">
-    <div class="card-row">
-      <mat-card class="inner-card">
-          <img src="assets\pictures\amendis.png" alt="Image 1">
-          <p style="text-align: center;">AMENDIS</p>
-      </mat-card>
-      <mat-card class="inner-card">
-          <img src="assets\pictures\lydec.png" alt="Image 2">
-          <p style="text-align: center;">LYDEC</p>
-      </mat-card>
-      <mat-card class="inner-card">
-          <img src="assets\pictures\maroc-telecom.png" alt="Image 3">
-          <p style="text-align: center;">MAROC TELECOM</p>
-      </mat-card>
-    </div>
-    <!-- Ajoutez plus de lignes de cartes ici si nécessaire -->
-    <div class="card-row">
-        <mat-card class="inner-card">
-            <img src="assets\pictures\redal.png" alt="Image 1">
-            <p style="text-align: center;">REDAL</p>
-        </mat-card>
-        <mat-card class="inner-card">
-          <div class="content">
-            <img src="assets\pictures\sidaction.png" alt="Image 2">
-            <p style="text-align: center;">SIDACTION</p>
-          </div>
-        </mat-card>
-        <mat-card class="inner-card">
-          <div class="content">
-            <p>Texte de la carte 3</p>
-            <img src="lien_vers_image3.jpg" alt="Image 3">
-          </div>
-        </mat-card>
-      </div>
-  </mat-card>
+  <div class="card-row" *ngFor="let creditor of creanciers">
+    <mat-card class="inner-card">
+        <img [src]="creditor.image">
+        <p style="text-align: center;">{{creditor.creditorName}}</p>
+        <ul>
+          <li *ngFor="let debt of creditor.listCreances">{{debt.debtName}}</li>
+        </ul>
+    </mat-card>
+  </div>
+</mat-card>

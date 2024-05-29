@@ -7,5 +7,6 @@ export interface Creance {
   amount: number;
   debtName: string;
   creditor: Creancier;
+  type: string;
   impayes: Impaye[];
 }

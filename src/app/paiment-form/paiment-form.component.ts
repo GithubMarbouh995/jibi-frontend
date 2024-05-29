@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-paiment-form',
@@ -6,12 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./paiment-form.component.css']
 })
 export class PaimentFormComponent implements OnInit {
-  fullname : String = '';
+  fullname : string = '';
   montant : number = 0;
+  tel: string='';
+  type: string=this.route.snapshot.paramMap.get('type')!;
+  id: number= Number(this.route.snapshot.paramMap.get('id')!);
 
-  constructor() { }
+  constructor(private route : ActivatedRoute,) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {  
   }
 
   Valider(){

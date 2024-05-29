@@ -12,12 +12,16 @@
         </mat-form-field>
       </div>
       <div class="creditors-list">
-        <div *ngFor="let creditor of creditors" class="creditor-card">
+        <div *ngFor="let creditor of creanciers" class="creditor-card">
           <mat-card>
-            <img mat-card-image [src]="creditor.logo" alt="{{creditor.name}}">
+            <img mat-card-image [src]="creditor.image">
             <mat-card-content>
-              <h3>{{creditor.name}}</h3>
-              <p>{{creditor.description}}</p>
+              <h3>{{creditor.creditorName}}</h3>
+              <p  *ngFor="let debt of creditor.listCreances">
+                <a [routerLink]="['form',debt.type ,debt.codeDebt]">
+                {{debt.debtName}}
+              </a>
+              </p>
             </mat-card-content>
           </mat-card>
         </div>

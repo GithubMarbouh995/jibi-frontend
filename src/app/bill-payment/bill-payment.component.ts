@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Creancier } from '../modals/creancier';
+import { CmiService } from '../service/cmi.service';
 
 @Component({
   selector: 'app-bill-payment',
@@ -6,12 +8,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./bill-payment.component.css']
 })
 export class BillPaymentComponent {
-  creditors = [
-    { logo: 'assets/pictures/maroc-telecom.png', name: 'IAM RECHARGES', description: 'TÉLÉPHONIE ET INTERNET SIM' },
-    { logo: 'assets/pictures/maroc-telecom.png', name: 'IAM FACTURES', description: 'PRODUIT INTERNET SIM, PRODUIT FIXE SIM, PRODUIT MOBILE SIM' },
-    { logo: 'assets/pictures/redal.png', name: 'REDAL', description: 'FACTURES REDAL' },
-    { logo: 'assets/pictures/amendis.png', name: 'AMENDIS TANGER', description: 'FACTURES AMENDIS TANGER' },
-    { logo: 'assets/pictures/amendis.png', name: 'AMENDIS TETOUAN', description: 'FACTURES AMENDIS TETOUAN' },
-    { logo: 'assets/pictures/lydec.png', name: 'LYDEC', description: 'FACTURES LYDEC' }
-  ];
+  creanciers: Creancier[]=[]
+  constructor(private cmiService: CmiService) { }
+
+  ngOnInit(): void {
+    this.getAllCreancier();
+  }
+
+  getAllCreancier(){
+    return this.cmiService.getAllCreanciers().subscribe(
+      data =>{
+        this.creanciers=data;
+        console.log(data);
+      }
+    )
+  }
 }

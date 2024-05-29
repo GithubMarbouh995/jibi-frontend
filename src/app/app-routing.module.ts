@@ -17,6 +17,8 @@ import {PaimentFormComponent} from "./paiment-form/paiment-form.component";
 import {PaiementRecapitulatifComponent} from "./paiement-recapitulatif/paiement-recapitulatif.component";
 import {AdminHomeComponent} from "./admin-home/admin-home.component";
 import {ClientHomeComponent} from "./client-home/client-home.component";
+import { CreateClientComponent } from './create-client/create-client.component';
+import { CreateAgentComponent } from './create-agent/create-agent.component';
 const routes: Routes = [
 
   { path: 'list', component: PostListComponent,
@@ -55,10 +57,12 @@ const routes: Routes = [
   },
    { path: 'agency', component: CreateAgencyComponent,},
    { path: 'paiement', component: PaiementHomeComponent,},
-    {path: 'paiement/form', component: PaimentFormComponent,},
+    {path: 'bill/form/:type/:id', component: PaimentFormComponent,},
     {path: 'paiement/recapitulatif', component: PaiementRecapitulatifComponent,},
     { path: 'admin-home', component: AdminHomeComponent,},
     { path: 'client-home', component: ClientHomeComponent,},
+    { path: 'clientForm', component: CreateClientComponent,},
+    { path: 'agentForm', component: CreateAgentComponent}
   ];
 
 @NgModule({
