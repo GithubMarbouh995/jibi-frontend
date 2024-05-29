@@ -1,0 +1,35 @@
+<mat-card class="container">
+  <mat-card-title>Ouverture d'un compte de paiement</mat-card-title>
+  <mat-card-content>
+    <form (ngSubmit)="create()" class="container flex">
+      <mat-form-field appearance="fill">
+        <mat-label>Sélectionner un produit</mat-label>
+        <mat-select matInput id="productSelect" [(ngModel)]="compteClient.typeHissab" name="typeHissab">
+          <mat-option value="Acc_200">Hssab 1 - Plafond: 200 DH</mat-option>
+          <mat-option value="Acc_5000">Hssab 2 - Plafond: 5000 DH</mat-option>
+          <mat-option value="Acc_20000">Hssab 3 - Plafond: 20000 DH</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div class="client-info">
+        <mat-form-field appearance="fill" class="full-width ">
+          <mat-label>Prénom</mat-label>
+          <input matInput id="firstName" [(ngModel)]="compteClient.firstName" name="firstName">
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Nom</mat-label>
+          <input matInput id="lastName" [(ngModel)]="compteClient.lastName" name="lastName">
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Téléphone</mat-label>
+          <input matInput type="tel" id="phone" [(ngModel)]="compteClient.phoneNumber" name="phoneNumber">
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" id="email" [(ngModel)]="compteClient.email" name="email">
+        </mat-form-field>
+      </div>
+      <button mat-raised-button color="primary" type="submit">Suivant</button>
+    </form>
+  </mat-card-content>
+</mat-card>
