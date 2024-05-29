@@ -1,0 +1,62 @@
+<mat-card class="container">
+    <mat-card-title>Informations Personnelles</mat-card-title>
+    <mat-card-content>
+      <form (ngSubmit)="create()" class="container flex">
+  
+        <div class="client-info">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Nom</mat-label>
+            <input matInput [(ngModel)]="agent.lastName" name="lastName">
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Prénom</mat-label>
+            <input matInput [(ngModel)]="agent.firstName" name="firstName">
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Sélectionner un produit</mat-label>
+            <mat-select [(ngModel)]="agent.cin" name="cin">
+              <mat-option value="CIN">Carte d'Identité</mat-option>
+              <mat-option value="Passport">Passport</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>N° Pièce d'identité</mat-label>
+            <input matInput [(ngModel)]="agent.num_piece_identite" name="identityNumber">
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Date de naissance</mat-label>
+            <input matInput type="date" [(ngModel)]="agent.date_naissance" name="birthDate">
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" [(ngModel)]="agent.email" name="email">
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Confirmation Email</mat-label>
+            <input matInput type="email" [(ngModel)]="email" name="confirmEmail">
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Numéro de téléphone</mat-label>
+            <input matInput type="tel" [(ngModel)]="agent.telephone" name="phone">
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>N° d'immatriculation</mat-label>
+            <input matInput [(ngModel)]="agent.num_immatriculation" name="registrationNumber">
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>N° de patente</mat-label>
+            <input matInput [(ngModel)]="agent.num_patente" name="patentNumber">
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Description</mat-label>
+            <textarea matInput name="description"></textarea>
+          </mat-form-field>
+          <!-- <div class="full-width">
+            <label for="fileUpload">Fichier</label>
+            <input type="file" id="fileUpload" [(ngModel)]="client.cin_recto" name="photo_recto" >
+          </div> -->
+        </div>
+        <button mat-raised-button color="primary" type="submit">Suivant</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
