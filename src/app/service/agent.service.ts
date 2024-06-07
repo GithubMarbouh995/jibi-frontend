@@ -36,4 +36,7 @@ export class AgentService {
   getClients(): Observable<Client[]> {
     return this.http.get<Client[]>(`${this.apiUrl}/list-clients`);
   }
+  change_password(email: any, password: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/changePassword?email=${email}&password=${password}`,{})
+  }
 }

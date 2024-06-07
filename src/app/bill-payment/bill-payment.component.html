@@ -18,9 +18,9 @@
             <mat-card-content>
               <h3>{{creditor.creditorName}}</h3>
               <p  *ngFor="let debt of creditor.listCreances">
-                <a [routerLink]="['form',debt.type ,debt.codeDebt]">
-                {{debt.debtName}}
-              </a>
+                <a (click)="onLinkClick(debt, creditor.image)">
+                  {{debt.debtName}}
+                </a>
               </p>
             </mat-card-content>
           </mat-card>

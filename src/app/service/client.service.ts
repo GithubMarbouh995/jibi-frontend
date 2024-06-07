@@ -8,7 +8,7 @@ import { Client } from '../modals/client';
   providedIn: 'root'
 })
 export class ClientService {
-  private apiUrl = 'api/client'; // Replace with your API URL
+  private apiUrl = 'http://localhost:8080/api/client'; // Replace with your API URL
 
   constructor(private http: HttpClient) { }
 
@@ -22,5 +22,11 @@ export class ClientService {
 
   sendEmail(): Observable<void> {
     return this.http.post<void>(`${this.apiUrl}/SendEmail`, {});
+  }
+  getTel(id: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}/getTel/${id}`,{responseType: 'text'});
+  }
+  getClient(id: number): Observable<Client> {
+    return this.http.get<Client>(`${this.apiUrl}/getClient/${id}`);
   }
 }

@@ -19,6 +19,8 @@ import {AdminHomeComponent} from "./admin-home/admin-home.component";
 import {ClientHomeComponent} from "./client-home/client-home.component";
 import { CreateClientComponent } from './create-client/create-client.component';
 import { CreateAgentComponent } from './create-agent/create-agent.component';
+import { ListImpayeComponent } from './list-impaye/list-impaye.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 const routes: Routes = [
 
   { path: 'list', component: PostListComponent,
@@ -62,7 +64,9 @@ const routes: Routes = [
     { path: 'admin-home', component: AdminHomeComponent,},
     { path: 'client-home', component: ClientHomeComponent,},
     { path: 'clientForm', component: CreateClientComponent,},
-    { path: 'agentForm', component: CreateAgentComponent}
+    { path: 'agentForm', component: CreateAgentComponent},
+    {path: 'impaye/:id_client/:id_creance', component: ListImpayeComponent},
+    {path: 'change_password', component: ChangePasswordComponent}
   ];
 
 @NgModule({

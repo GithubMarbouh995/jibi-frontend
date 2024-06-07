@@ -8,7 +8,7 @@ import { Transaction } from '../modals/transaction';
   providedIn: 'root'
 })
 export class PaiementService {
-  private apiUrl = '/api/paiement'; // Replace with your API URL
+  private apiUrl = 'http://localhost:8080/api/paiement'; // Replace with your API URL
 
   constructor(private http: HttpClient) { }
 
@@ -17,10 +17,8 @@ export class PaiementService {
     return this.http.get<Facture>(`${this.apiUrl}/facture/${id}`, { params: params });
   }
 
-  confirmerPaiement(factureId: number, phoneNumber: string): Observable<Transaction> {
-    let params = new HttpParams()
-      .set('factureId', factureId.toString())
-      .set('phoneNumber', phoneNumber);
-    return this.http.post<Transaction>(`${this.apiUrl}/confirmer`, {}, { params: params });
+  confirmerPaiement(factureId: number, phoneNumber: any): Observable<any> {
+    console.log(phoneNumber);
+    return this.http.post(`${this.apiUrl}/confirmer?id_impaye=${factureId}&phone=${phoneNumber}`, {});
   }
 }

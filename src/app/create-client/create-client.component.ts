@@ -38,7 +38,7 @@ export class CreateClientComponent implements OnInit {
    else{
        this.agentService.createClient(this.client).subscribe(data=>{
          console.log(data);
-         alert("Client créé avec succès")
+         alert(`Client créé avec succès \n Veuillez noter que le mot de passe par défaut est: ${data.password} \n Veuillez le changer dès votre première connexion`);
        } 
       )
     }

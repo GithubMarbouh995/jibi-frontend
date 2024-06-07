@@ -12,10 +12,13 @@ export class PaimentFormComponent implements OnInit {
   tel: string='';
   type: string=this.route.snapshot.paramMap.get('type')!;
   id: number= Number(this.route.snapshot.paramMap.get('id')!);
+  imagePath: string | null = '';
 
   constructor(private route : ActivatedRoute,) { }
 
   ngOnInit(): void {  
+    this.imagePath = localStorage.getItem('image');
+    console.log(this.id);
   }
 
   Valider(){

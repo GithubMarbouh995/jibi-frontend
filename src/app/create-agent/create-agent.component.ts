@@ -37,7 +37,7 @@ export class CreateAgentComponent implements OnInit {
      else{
          this.adminService.createAgent(this.agent).subscribe(data=>{
            console.log(data);
-           alert("Agent créé avec succès")
+           alert(`Agent créé avec succès \n Veuillez noter que le mot de passe par défaut est: ${data.password} \n Veuillez le changer dès votre première connexion`);
          } 
         )
       }
