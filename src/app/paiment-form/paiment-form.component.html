@@ -9,6 +9,10 @@
         <img [src]="this.imagePath" alt="Description de l'image" class="image-left">
         <div class="client-info">
           <mat-form-field appearance="fill" class="full-width ">
+            <mat-label>Votre Id Client </mat-label>
+            <input matInput id="number"  [(ngModel)]="tel" [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="full-width ">
             <mat-label>Nom et Prénom du donateur</mat-label>
             <input matInput id="fullname"  [(ngModel)]="fullname" [ngModelOptions]="{standalone: true}">
           </mat-form-field>
@@ -18,7 +22,7 @@
           </mat-form-field>
         </div>
         <div style="text-align: center;">
-        <button mat-raised-button color="danger" class="margin-right" (click)="Valider()"> ✓ Valider</button>
+        <button mat-raised-button color="danger" class="margin-right" (click)="donation()"> ✓ Valider</button>
         <button mat-raised-button color="warn"> ✗ Annuler </button>
     </div>
       </form>
@@ -26,8 +30,12 @@
         <img [src]="this.imagePath" alt="Description de l'image" class="image-left">
         <div class="client-info">
           <mat-form-field appearance="fill" class="full-width ">
-            <mat-label>Numero</mat-label>
+            <mat-label>Id Client </mat-label>
             <input matInput id="number"  [(ngModel)]="tel" [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="full-width ">
+            <mat-label>Numero</mat-label>
+            <input matInput id="number"  [(ngModel)]="tel_recharge" [ngModelOptions]="{standalone: true}">
           </mat-form-field>
           <mat-form-field appearance="fill" class="full-width">
             <mat-label>Montant de la recharge</mat-label>
@@ -40,7 +48,7 @@
           </mat-form-field>
         </div>
         <div style="text-align: center;">
-        <button mat-raised-button color="danger" class="margin-right" (click)="Valider()"> ✓ Valider</button>
+        <button mat-raised-button color="danger" class="margin-right" (click)="recharge()"> ✓ Recharge</button>
         <button mat-raised-button color="warn"> ✗ Annuler </button>
     </div>
       </form>
@@ -53,7 +61,7 @@
           </mat-form-field>
         </div>
         <div style="text-align: center;">
-        <button mat-raised-button color="danger" class="margin-right" [routerLink]="['/impaye',tel,id]"> ✓ Valider</button>
+        <button mat-raised-button color="danger" class="margin-right" [routerLink]="['/impaye',id_client,id]"> ✓ Valider</button>
         <button mat-raised-button color="warn"> ✗ Annuler </button>
     </div>
       </form>

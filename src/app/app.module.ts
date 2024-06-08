@@ -50,6 +50,7 @@ import { CreateClientComponent } from './create-client/create-client.component';
 import { CreateAgentComponent } from './create-agent/create-agent.component';
 import { ListImpayeComponent } from './list-impaye/list-impaye.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { VerificationPaiementComponent } from './verification-paiement/verification-paiement.component';
 // import { MatVideoModule } from 'mat-video';
 
 @NgModule({
@@ -79,6 +80,7 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
     CreateAgentComponent,
     ListImpayeComponent,
     ChangePasswordComponent,
+    VerificationPaiementComponent,
   ],
   imports: [
     BrowserModule,

@@ -21,6 +21,7 @@ import { CreateClientComponent } from './create-client/create-client.component';
 import { CreateAgentComponent } from './create-agent/create-agent.component';
 import { ListImpayeComponent } from './list-impaye/list-impaye.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { VerificationPaiementComponent } from './verification-paiement/verification-paiement.component';
 const routes: Routes = [
 
   { path: 'list', component: PostListComponent,
@@ -66,7 +67,8 @@ const routes: Routes = [
     { path: 'clientForm', component: CreateClientComponent,},
     { path: 'agentForm', component: CreateAgentComponent},
     {path: 'impaye/:id_client/:id_creance', component: ListImpayeComponent},
-    {path: 'change_password', component: ChangePasswordComponent}
+    {path: 'change_password', component: ChangePasswordComponent},
+    {path: 'verification/:type/:id_client', component: VerificationPaiementComponent,},
   ];
 
 @NgModule({

@@ -29,4 +29,7 @@ export class ClientService {
   getClient(id: number): Observable<Client> {
     return this.http.get<Client>(`${this.apiUrl}/getClient/${id}`);
   }
+  getIdByTel(tel: string): Observable<number> {
+    return this.http.get<number>(`${this.apiUrl}/getIdByTel/${tel}`);
+  }
 }

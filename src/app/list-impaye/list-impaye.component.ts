@@ -12,7 +12,7 @@ import { PaiementService } from '../service/paiement.service';
   styleUrls: ['./list-impaye.component.css']
 })
 export class ListImpayeComponent implements OnInit {
-  id_client: number = Number(this.route.snapshot.paramMap.get('id_client')!);
+  id_client: number=0;
   id_creance : number = Number(this.route.snapshot.paramMap.get('id_creance')!);
   tel : string = '';
   impayes: Impaye[] = [];
@@ -52,5 +52,13 @@ export class ListImpayeComponent implements OnInit {
       );
       alert("Paiement effectué avec succès")
       this.getImpayesByDebtCode(this.id_client, this.id_creance);
+    }
+    getIdClient(){
+      this.clientService.getIdByTel(this.tel).subscribe(
+        data => {
+          this.id_client = data;
+          console.log(data);
+        }
+      );
     }
 }

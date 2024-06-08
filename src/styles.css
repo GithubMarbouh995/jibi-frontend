@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap');
-html, body { height: 100%; 
+@import "~bootstrap/dist/css/bootstrap.css";
+html, body { height: 100%;
 }
 body {
   margin: 0;
@@ -20,12 +21,12 @@ body::-webkit-scrollbar {
 
 
 .bg {
-  background-image: url("assets/pictures/papers.co-sa52-blurred-white-blur-wallpaper-29-wallpaper.jpg");
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+  /*background-color: #29549d;*/
+  /*height: 100%;*/
+  /*background-position: center;*/
+  /*background-repeat: no-repeat;*/
+  /*background-size: cover;*/
+  /*background-attachment: fixed;*/
 }
 
 ::selection {
