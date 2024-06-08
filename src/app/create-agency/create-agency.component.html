@@ -1,0 +1,154 @@
+<app-header></app-header>
+<mat-card class="form-container contact-form">
+  <mat-card-title>Informations personnelles</mat-card-title>
+  <mat-card-content>
+    <form>
+      <div class="form-row">
+        <mat-form-field class="form-group" appearance="fill">
+          <mat-label>Nom *</mat-label>
+          <input matInput type="text" id="nom" required>
+        </mat-form-field>
+        <mat-form-field class="form-group" appearance="fill">
+          <mat-label>Prénom *</mat-label>
+          <input matInput type="text" id="prenom" required>
+        </mat-form-field>
+      </div>
+      <div class="form-row">
+        <mat-form-field class="form-group" appearance="fill">
+          <mat-label>Pièce d'identité *</mat-label>
+          <input matInput type="text" id="pieceIdentite" required>
+        </mat-form-field>
+        <mat-form-field class="form-group" appearance="fill">
+          <mat-label>N° pièce d'identité *</mat-label>
+          <input matInput type="text" id="numPieceIdentite" required>
+        </mat-form-field>
+      </div>
+      <div class="form-row">
+        <mat-form-field class="form-group" appearance="fill">
+          <mat-label>Date de naissance</mat-label>
+          <input matInput type="date" id="dateNaissance">
+        </mat-form-field>
+        <mat-form-field class="form-group" appearance="fill">
+          <mat-label>Adresse *</mat-label>
+          <input matInput type="text" id="adresse" required>
+        </mat-form-field>
+      </div>
+      <div class="form-row">
+        <mat-form-field class="form-group" appearance="fill">
+          <mat-label>Email *</mat-label>
+          <input matInput type="email" id="email" required>
+        </mat-form-field>
+        <mat-form-field class="form-group" appearance="fill">
+          <mat-label>Confirmation Email</mat-label>
+          <input matInput type="email" id="confirmationEmail">
+        </mat-form-field>
+      </div>
+      <div class="form-row">
+        <mat-form-field class="form-group" appearance="fill">
+          <mat-label>Numéro de téléphone *</mat-label>
+          <input matInput type="tel" id="telephone" required>
+        </mat-form-field>
+        <mat-form-field class="form-group" appearance="fill">
+          <mat-label>N° d'immatriculation au registre de commerce *</mat-label>
+          <input matInput type="text" id="numImmatriculation" required>
+        </mat-form-field>
+      </div>
+      <div class="form-row">
+        <mat-form-field class="form-group" appearance="fill">
+          <mat-label>N° de patente *</mat-label>
+          <input matInput type="text" id="numPatente" required>
+        </mat-form-field>
+      </div>
+
+      <mat-card-subtitle>Pièces jointes</mat-card-subtitle>
+      <div class="form-row">
+        <mat-form-field class="form-group" appearance="fill">
+          <mat-label>Description</mat-label>
+          <input matInput type="text" id="fileDescription" placeholder="Ajouter une description">
+        </mat-form-field>
+        <div class="form-group file-upload">
+          <label for="fileUpload">Fichier</label>
+          <input type="file" id="fileUpload" style="display: none;" />
+          <div class="input-group grid">
+            <button mat-raised-button class="m-4 yellow-button" onclick="document.getElementById('fileUpload').click();">Parcourir...</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button mat-raised-button color="primary" type="submit">Enregistrer</button>
+        <button mat-button color="warn" type="button">Annuler</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
+<!--<div class="contact-form">-->
+<!--  <h2>Entrer Vos Informations</h2>-->
+<!--  <p>Veuillez entrer tous les champs sans exception</p>-->
+<!--  <form>-->
+<!--    <div class="form-row">-->
+<!--      <div class="form-group">-->
+<!--        <label for="nom">Nom</label>-->
+<!--        <input type="text" id="nom" name="lastName" required>-->
+<!--      </div>-->
+<!--      <div class="form-group">-->
+<!--        <label for="prenom">Prénom</label>-->
+<!--        <input type="text" id="prenom" name="firstName" required>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <label for="produit">Sélectionner un produit</label>-->
+<!--      <select id="produit" name="cin" required>-->
+<!--        <option value="" disabled selected>Choisissez un produit</option>-->
+<!--        <option value="CIN">Carte d'Identité</option>-->
+<!--        <option value="Passport">Passport</option>-->
+<!--      </select>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <label for="piece_identite">N° Pièce d'identité</label>-->
+<!--      <input type="text" id="piece_identite" name="identityNumber" required>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <label for="date_naissance">jj/mm/aaaa Date de naissance</label>-->
+<!--      <input type="date" id="date_naissance" name="birthDate" required>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <label for="adresse">Adresse</label>-->
+<!--      <input type="text" id="adresse" name="adresse" required>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <label for="email">Email</label>-->
+<!--      <input type="email" id="email" name="email" required>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <label for="confirm_email">Confirmation Email</label>-->
+<!--      <input type="email" id="confirm_email" name="confirmEmail" required>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <label for="telephone">Numéro de téléphone</label>-->
+<!--      <input type="tel" id="telephone" name="phone" required>-->
+<!--    </div>-->
+<!--    <div class="form-row">-->
+<!--      <div class="form-group">-->
+<!--        <label for="immatriculation">N° d'immatriculation</label>-->
+<!--        <input type="text" id="immatriculation" name="registrationNumber">-->
+<!--      </div>-->
+<!--      <div class="form-group">-->
+<!--        <label for="patente">N° de patente</label>-->
+<!--        <input type="text" id="patente" name="patentNumber">-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <label for="description">Description</label>-->
+<!--      <textarea id="description" name="description" required></textarea>-->
+<!--    </div>-->
+<!--    <div class="form-group file-upload">-->
+<!--                <label for="fileUpload">Fichier</label>-->
+<!--                <input type="file" id="fileUpload" style="display: none;" />-->
+<!--                <div class="input-group grid">-->
+<!--                  <button mat-raised-button class="m-4 yellow-button" onclick="document.getElementById('fileUpload').click();">Parcourir...</button>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--    <button type="submit">Soumettre</button>-->
+<!--  </form>-->
+<!--</div>-->
