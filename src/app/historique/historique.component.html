@@ -1,0 +1,84 @@
+<div class="wrapper">
+  <aside id="sidebar" [class.expand]="isExpanded">
+    <div class="d-flex">
+      <button class="toggle-btn" type="button" (click)="toggleSidebar()">
+        <i class="lni lni-grid-alt"></i>
+      </button>
+      <div class="sidebar-logo">
+        <a href="#">Main dashboard</a>
+      </div>
+    </div>
+    <ul class="sidebar-nav">
+      <li class="sidebar-item">
+        <a href="#" class="sidebar-link">
+          <i class="lni lni-user"></i>
+          <span>Profile</span>
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a routerLink="/historique" class="sidebar-link">
+          <i class="bi bi-arrow-counterclockwise"></i>
+          <span>Historique</span>
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+           [attr.data-bs-target]="'#auth'" aria-expanded="false" aria-controls="auth">
+          <i class="bi bi-credit-card-2-front"></i>
+          <span>Opereations</span>
+        </a>
+        <ul id="auth" class="sidebar-dropdown list-unstyled collapse">
+          <li class="sidebar-item">
+            <a href="#" class="sidebar-link" routerLink="/bill">Effectuer un paiement</a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="sidebar-item">
+        <a href="#" class="sidebar-link">
+          <i class="lni lni-popup"></i>
+          <span>Notification</span>
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a href="#" class="sidebar-link">
+          <i class="lni lni-cog"></i>
+          <span>Setting</span>
+        </a>
+      </li>
+    </ul>
+    <div class="sidebar-footer">
+      <a href="#" class="sidebar-link">
+        <i class="lni lni-exit"></i>
+        <span>Logout</span>
+      </a>
+    </div>
+  </aside>
+  <div class="container">
+    <h1>Transactions du Client</h1>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>Montant</th>
+        <th>Date</th>
+        <th>Status</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>1</td>
+        <td>100.00 €</td>
+        <td>01/06/2024</td>
+        <td>Validé</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>50.00 €</td>
+        <td>05/06/2024</td>
+        <td>En attente</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
