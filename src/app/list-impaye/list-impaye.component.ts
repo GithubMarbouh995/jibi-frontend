@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ImpayeService } from '../service/impaye.service';
 import { get } from 'video.js/dist/types/tech/middleware';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Impaye } from '../modals/impaye';
 import { ClientService } from '../service/client.service';
 import { PaiementService } from '../service/paiement.service';
@@ -12,19 +12,22 @@ import { PaiementService } from '../service/paiement.service';
   styleUrls: ['./list-impaye.component.css']
 })
 export class ListImpayeComponent implements OnInit {
-  id_client: number=0;
+  id_client: number=Number(this.route.snapshot.paramMap.get('id_client')!);
   id_creance : number = Number(this.route.snapshot.paramMap.get('id_creance')!);
   tel : string = '';
   impayes: Impaye[] = [];
 
-  constructor(private impayeService: ImpayeService, private route : ActivatedRoute, private clientService :  ClientService, private paiementService: PaiementService) { }
+  constructor(private router: Router,private impayeService: ImpayeService, private route : ActivatedRoute, private clientService :  ClientService, private paiementService: PaiementService) { }
 
   ngOnInit(): void {
+    console.log(this.id_creance);
+    console.log(this.id_client);
+    console.log("Hello");
     this.getImpayesByDebtCode(this.id_client, this.id_creance);
   }
 
   getImpayesByDebtCode(creance_id: number, client_id: number) {
-    this.impayeService.getImpayesByDebtCode(creance_id, client_id).subscribe(
+    this.impayeService.getImpayesByDebtCode(1, 1).subscribe(
       data => {
         console.log(data);
         this.impayes = data;
@@ -58,6 +61,15 @@ export class ListImpayeComponent implements OnInit {
         data => {
           this.id_client = data;
           console.log(data);
+        }
+      );
+    }
+    valider(impaye: number){
+      localStorage.setItem('impaye',impaye.toString());
+      this.paiementService.generateOTP(this.id_client).subscribe(
+        data => {
+          console.log(data);
+          this.router.navigate(['/verification','FACTURE',this.id_client]);
         }
       );
     }

@@ -61,7 +61,7 @@
           </mat-form-field>
         </div>
         <div style="text-align: center;">
-        <button mat-raised-button color="danger" class="margin-right" [routerLink]="['/impaye',id_client,id]"> ✓ Valider</button>
+        <button mat-raised-button color="danger" class="margin-right" (click)="valider()"> ✓ Valider</button>
         <button mat-raised-button color="warn"> ✗ Annuler </button>
     </div>
       </form>

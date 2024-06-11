@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { PaiementService } from '../service/paiement.service';
 import { ClientService } from '../service/client.service';
+import { ColdObservable } from 'rxjs/internal/testing/ColdObservable';
 
 @Component({
   selector: 'app-paiment-form',
@@ -74,4 +75,15 @@ export class PaimentFormComponent implements OnInit {
       }
     );
   }
+
+  valider(){
+    this.clientService.getIdByTel(this.tel).subscribe(
+      data => {
+        console.log(data);
+        this.router.navigate(['/impaye',data,this.id]);
+      }
+    );
+    
+  }
+
 }

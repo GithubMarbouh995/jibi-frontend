@@ -18,7 +18,7 @@ export class PaiementRecapitulatifComponent implements OnInit {
   facture: any={};
   Creance: any={};
   Object: any={};
-  id_creance: number = Number(localStorage.getItem('creance'));
+  id_creance: number = Number(localStorage.getItem('creditor'));
   id_facture: number= Number(this.route.snapshot.paramMap.get('id_facture')!);
   id: number = Number(this.route.snapshot.paramMap.get('id')!);
   transactionType = localStorage.getItem('type')!;

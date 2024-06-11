@@ -32,7 +32,7 @@
           <div class="card-body">
             <h5 class="card-title">{{creditor.creditorName}}</h5>
             <p *ngFor="let debt of creditor.listCreances" class="card-text">
-              <a class="btn btn-primary" (click)="onLinkClick(debt,creditor.image)">{{debt.debtName}}</a>
+              <a class="btn btn-primary" (click)="onLinkClick(debt,creditor.image,creditor.codeCreditor)">{{debt.debtName}}</a>
             </p>
           </div>
         </div>

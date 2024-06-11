@@ -24,9 +24,10 @@ export class BillPaymentComponent {
       }
     )
   }
-  onLinkClick(debt:any, creditorimage:any) {
+  onLinkClick(debt:any, creditorimage:any,id:any) {
     console.log(debt);
         localStorage.setItem('image', creditorimage);
+        localStorage.setItem('creditor', id);
         console.log(debt.type, debt.codeDebt)
         this.route.navigate(['bill/form', debt.type, debt.codeDebt]);
   }
